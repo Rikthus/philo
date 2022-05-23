@@ -6,7 +6,7 @@
 /*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 01:57:48 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/23 16:58:10 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 17:33:43 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ static	void	*routine(void *param)
 			break ;
 		if (!event(philo, TAKE_F2))
 			break ;
-		// if (!event(philo, EAT))
-		// 	break ;
+		if (!event(philo, EAT))
+			break ;
 		check_drop_forks(philo);
 		if (!event(philo, SLEEP))
 			break ;

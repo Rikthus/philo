@@ -6,7 +6,7 @@
 /*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 19:45:45 by maxperei          #+#    #+#             */
-/*   Updated: 2022/05/23 17:29:30 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 17:30:45 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void				monitoring(t_philo **philo_tab);
 int					event(t_philo *philo, int event);
 
 // EVENTS
-// int					eating(t_philo *philo);
+int					eating(t_philo *philo);
 int					thinking(t_philo *philo);
 int					sleeping(t_philo *philo);
 int					print_state(t_philo *philo, int state);

@@ -6,7 +6,7 @@
 /*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 11:52:37 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/23 16:59:20 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 17:42:22 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	event(t_philo *philo, int event)
 		return (take_fork(philo, TAKE_F1));
 	if (event == TAKE_F2)
 		return (take_fork(philo, TAKE_F2));
-	// if (event == EAT)
-	// 	return (eating(philo));
+	if (event == EAT)
+		return (eating(philo));
 	if (event == THINK)
 		return (thinking(philo));
 	if (event == SLEEP)
@@ -61,16 +61,16 @@ int	print_state(t_philo *philo, int state)
 	}
 	if (state == TAKE_F1 || state == TAKE_F2)
 		printf("[%llu] %d has taken a fork\n",
-				get_time() - philo->starting_time, philo->phi_id);
+				get_time() - philo->starting_time, philo->phi_id + 1);
 	if (state == EAT)
 		printf("[%llu] %d is eating\n",
-				get_time() - philo->starting_time, philo->phi_id);
+				get_time() - philo->starting_time, philo->phi_id + 1);
 	if (state == SLEEP)
 		printf("[%llu] %d is sleeping\n",
-				get_time() - philo->starting_time, philo->phi_id);
+				get_time() - philo->starting_time, philo->phi_id + 1);
 	if (state == THINK)
 		printf("[%llu] %d is thinking\n",
-				get_time() - philo->starting_time, philo->phi_id);
+				get_time() - philo->starting_time, philo->phi_id + 1);
 	pthread_mutex_unlock(&philo->data->mutex_chat);
 	return (1);
 }
