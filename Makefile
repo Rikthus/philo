@@ -3,7 +3,7 @@ NAME	:=	philo
 CSAN	:=	-fsanitize=thread -g3
 
 CC	:=	gcc
-CFLAGS	:=	-Wall -Wextra -Werror $(CSAN)
+CFLAGS	:=	-Wall -Wextra -Werror #$(CSAN)
 
 DIR_SRCS	:=	sources
 DIR_OBJS	:=	.objs
