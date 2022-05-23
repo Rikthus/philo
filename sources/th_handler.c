@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   th_handler.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 01:57:48 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/23 12:01:19 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 14:07:45 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ static	void	*routine(void *param)
 		// if (!event(philo, EAT))
 		// 	break ;
 		// check_drop_forks(philo);
-		// if (!event(philo, SLEEP))
-		// 	break ;
+		if (!event(philo, SLEEP))
+			break ;
 		if (!event(philo, THINK))
 			break ;
 	}
@@ -53,10 +53,11 @@ int	launch_threads(t_philo **philo_tab)
 			return (0);
 		i++;
 	}
+	monitoring(philo_tab);
 	i = 0;
 	while (i < philo_tab[0]->data->nb_forks)
 	{
-	if (pthread_join(th[i], NULL) != 0)
+		if (pthread_join(th[i], NULL) != 0)
 			return (0);
 		i++;
 	}

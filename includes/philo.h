@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 19:45:45 by maxperei          #+#    #+#             */
-/*   Updated: 2022/05/23 12:08:33 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 14:08:06 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,8 @@ typedef struct	s_philo
 # define DROP_F1 7
 # define DROP_F2 8
 
+# define DEBUG printf("ok\n");
+
 // PARSING
 int					parsing(int argc, char **argv);
 
@@ -79,7 +81,7 @@ int					event(t_philo *philo, int event);
 // EVENTS
 // int					eating(t_philo *philo);
 int					thinking(t_philo *philo);
-// int					sleeping(t_philo *philo);
+int					sleeping(t_philo *philo);
 // int					check_end(t_philo *philo);
 int					print_state(t_philo *philo, int state);
 

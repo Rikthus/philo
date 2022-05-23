@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 01:06:10 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/23 12:08:59 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 13:04:01 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ static	int	init_mutex(t_data **data)
 		i++;
 	}
 	pthread_mutex_init(&tmp->mutex_chat, NULL);
+	pthread_mutex_init(&tmp->mutex_death, NULL);
 	pthread_mutex_init(&tmp->mutex_end_diner, NULL);
 	return (1);
 }
