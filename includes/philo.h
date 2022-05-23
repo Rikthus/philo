@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 19:45:45 by maxperei          #+#    #+#             */
-/*   Updated: 2022/05/23 17:30:45 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 22:46:53 by tulipe           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ typedef struct s_data
 	int					t_sleep;
 	int					max_eat;
 	int					nb_forks;
-	int					*forks;
 	int					full_eat;
 	int					death;
 	int					end_diner;
@@ -42,8 +41,6 @@ typedef struct s_data
 typedef struct	s_philo
 {
 	int					phi_id;
-	int					fork1;
-	int					fork2;
 	int					nb_eat;
 	long long unsigned	last_eat_time;
 	long long unsigned	starting_time;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   th_handler.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 01:57:48 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/23 20:07:40 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 22:57:49 by tulipe           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int	launch_threads(t_philo **philo_tab)
 			return (0);
 		i++;
 	}
+	ft_usleep(10);
 	monitoring(philo_tab);
 	i = 0;
 	while (i < philo_tab[0]->data->nb_forks)

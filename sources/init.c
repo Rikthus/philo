@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 19:59:10 by maxperei          #+#    #+#             */
-/*   Updated: 2022/05/23 17:41:53 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 22:46:11 by tulipe           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ static	int	init_philos(t_philo **philo_tab, t_data **data, int nb_forks)
 	while (i < nb_forks)
 	{
 		tmp[i].phi_id = i;
-		tmp[i].fork1 = 0;
-		tmp[i].fork2 = 0;
 		tmp[i].last_eat_time = 0;
 		tmp[i].nb_eat = 0;
 		tmp[i].data = *data;

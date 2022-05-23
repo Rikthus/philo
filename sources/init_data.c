@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_data.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 01:06:10 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/23 15:30:52 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 22:47:39 by tulipe           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,6 @@ static	void	fill_static_data(t_data **data, int argc, char **argv)
 	tmp_d->full_eat = 0;
 	tmp_d->death = 0;
 	tmp_d->end_diner = 0;
-	//init starting_time after staring thread
-}
-
-static	int	init_forks(t_data **data)
-{
-	int		i;
-	t_data	*tmp;
-
-	i = 0;
-	tmp = *data;
-	tmp->forks = malloc(sizeof(int) * tmp->nb_forks);
-	if (!tmp->forks)
-		return (0);
-	while (i < tmp->nb_forks)
-	{
-		tmp->forks[i] = 1;
-		i++;
-	}
-	return (1);
 }
 
 static	int	init_mutex(t_data **data)
@@ -79,11 +60,6 @@ t_data	*init_data(int argc, char **argv)
 	if (!data)
 		return (0);
 	fill_static_data(&data, argc, argv);
-	if (!init_forks(&data))
-	{
-		free(data);
-		return (NULL);
-	}
 	if (!init_mutex(&data))
 	{
 		clean_data(&data);
