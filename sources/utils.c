@@ -6,7 +6,7 @@
 /*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 17:53:06 by maxperei          #+#    #+#             */
-/*   Updated: 2022/05/22 15:22:07 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 18:05:36 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	ft_usleep(int time)
 	long long	s_time;
 
 	r_time = time * 1000;
-	s_time = 0;
+	s_time = usleep(time);
 	while (s_time < r_time)
 	{
 		usleep(1000);

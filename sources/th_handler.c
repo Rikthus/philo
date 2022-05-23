@@ -6,7 +6,7 @@
 /*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 01:57:48 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/23 17:33:43 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 17:53:55 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static	void	*routine(void *param)
 	pthread_mutex_lock(&philo->data->mutex_eat);
 	philo->last_eat_time = get_time();
 	pthread_mutex_unlock(&philo->data->mutex_eat);
-	if (philo->phi_id % 2 == 0)
+	if (philo->phi_id % 2 == 1)
 		ft_usleep(philo->data->t_eat);
 	while (1)
 	{

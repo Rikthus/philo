@@ -6,7 +6,7 @@
 /*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 12:06:13 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/23 17:41:45 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 18:03:20 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static	int	is_dead(t_philo **philo_tab, int nb_philo, int t_die)
 	while (i < nb_philo)
 	{
 		pthread_mutex_lock(&philo_tab[0]->data->mutex_eat);
-		if (philo_tab[i]->last_eat_time + t_die < get_time())
+		if (philo_tab[0][i].last_eat_time + t_die < get_time())
 		{
 			pthread_mutex_unlock(&philo_tab[0]->data->mutex_eat);
 			pthread_mutex_lock(&philo_tab[0]->data->mutex_death);
