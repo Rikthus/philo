@@ -6,7 +6,7 @@
 /*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 19:45:45 by maxperei          #+#    #+#             */
-/*   Updated: 2022/05/23 22:46:53 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 23:14:39 by tulipe           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,6 @@ int					launch_threads(t_philo **philo_tab);
 
 // MONITORING
 void				monitoring(t_philo **philo_tab);
-
-// EVENT_CTRL
-int					event(t_philo *philo, int event);
 
 // EVENTS
 int					eating(t_philo *philo);

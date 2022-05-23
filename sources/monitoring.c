@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   monitoring.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 12:06:13 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/23 19:19:48 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 23:25:24 by tulipe           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static	int	is_dead(t_philo **philo_tab, int nb_philo, int t_die)
 	i = 0;
 	while (i < nb_philo)
 	{
+		usleep(1);
 		pthread_mutex_lock(&philo_tab[0]->data->mutex_eat);
 		if (philo_tab[0][i].last_eat_time + t_die < get_time())
 		{
@@ -41,6 +42,7 @@ void	monitoring(t_philo **philo_tab)
 {
 	while (1)
 	{
+		usleep(1);
 		pthread_mutex_lock(&philo_tab[0]->data->mutex_end_diner);
 		if (philo_tab[0]->data->full_eat == philo_tab[0]->data->nb_forks)
 		{

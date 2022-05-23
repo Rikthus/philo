@@ -6,7 +6,7 @@
 /*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 01:57:48 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/23 22:57:49 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 23:28:12 by tulipe           ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,18 @@ static	void	*routine(void *param)
 	philo->last_eat_time = get_time();
 	pthread_mutex_unlock(&philo->data->mutex_eat);
 	if (philo->phi_id % 2 == 1)
-		ft_usleep(philo->data->t_eat);
+		ft_usleep(30);
 	while (1)
 	{
-		if (!event(philo, TAKE_F1))
+		usleep(1);
+		if (!take_fork(philo, TAKE_F1) || !take_fork(philo, TAKE_F2))
 			break ;
-		if (!event(philo, TAKE_F2))
-			break ;
-		if (!event(philo, EAT))
+		if (!eating(philo))
 			break ;
 		check_drop_forks(philo);
-		if (!event(philo, SLEEP))
+		if (!thinking(philo))
 			break ;
-		if (!event(philo, THINK))
+		if (!sleeping(philo))
 			break ;
 	}
 	check_drop_forks(philo);
