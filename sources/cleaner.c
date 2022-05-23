@@ -6,7 +6,7 @@
 /*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 01:37:34 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/23 13:04:11 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 15:31:03 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	clean_data(t_data **data)
 	pthread_mutex_destroy(&tmp->mutex_chat);
 	pthread_mutex_destroy(&tmp->mutex_death);
 	pthread_mutex_destroy(&tmp->mutex_end_diner);
+	pthread_mutex_destroy(&tmp->mutex_eat);
 	free(tmp->forks);
 	free(tmp);
 }

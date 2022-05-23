@@ -17,6 +17,7 @@ LST_SRCS	:=	main.c \
 				th_handler.c \
 				event_ctrl.c \
 				events.c \
+				fork_events.c \
 				cleaner.c \
 				utils.c
 

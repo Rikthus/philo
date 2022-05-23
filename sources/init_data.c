@@ -6,7 +6,7 @@
 /*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 01:06:10 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/23 13:04:01 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 15:30:52 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ static	int	init_mutex(t_data **data)
 	pthread_mutex_init(&tmp->mutex_chat, NULL);
 	pthread_mutex_init(&tmp->mutex_death, NULL);
 	pthread_mutex_init(&tmp->mutex_end_diner, NULL);
+	pthread_mutex_init(&tmp->mutex_eat, NULL);
 	return (1);
 }
 

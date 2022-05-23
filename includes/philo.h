@@ -6,7 +6,7 @@
 /*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 19:45:45 by maxperei          #+#    #+#             */
-/*   Updated: 2022/05/23 14:08:06 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 17:29:30 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct s_data
 	pthread_mutex_t		*mtx;
 	pthread_mutex_t		mutex_chat;
 	pthread_mutex_t		mutex_death;
+	pthread_mutex_t		mutex_eat;
 	pthread_mutex_t		mutex_end_diner;
 }	t_data;
 
@@ -82,13 +83,12 @@ int					event(t_philo *philo, int event);
 // int					eating(t_philo *philo);
 int					thinking(t_philo *philo);
 int					sleeping(t_philo *philo);
-// int					check_end(t_philo *philo);
 int					print_state(t_philo *philo, int state);
 
 // EVENT_FORK
-// void				check_drop_forks(t_philo *philo);
-// int					take_fork(t_philo *philo, int fork);
-// int					drop_fork(t_philo *philo, int fork);
+void				check_drop_forks(t_philo *philo);
+int					take_fork(t_philo *philo, int fork);
+void				release_fork(t_philo *philo, int fork);
 
 // CLEANER
 void				clean_data(t_data **data);

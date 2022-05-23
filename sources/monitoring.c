@@ -6,7 +6,7 @@
 /*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 12:06:13 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/23 14:31:28 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/23 16:49:16 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,19 @@ static	int	is_dead(t_philo **philo_tab, int nb_philo, int t_die)
 	i = 0;
 	while (i < nb_philo)
 	{
+		pthread_mutex_lock(&philo_tab[0]->data->mutex_eat);
 		if (philo_tab[i]->last_eat_time + t_die < get_time())
 		{
+			pthread_mutex_unlock(&philo_tab[0]->data->mutex_eat);
 			pthread_mutex_lock(&philo_tab[0]->data->mutex_death);
 			philo_tab[0]->data->death = 1;
 			pthread_mutex_unlock(&philo_tab[0]->data->mutex_death);
 			pthread_mutex_lock(&philo_tab[0]->data->mutex_chat);
-			printf("[%lld] %d died\n", get_time() - philo_tab[0]->starting_time, i);
+			printf("[%llu] %d died\n", get_time() - philo_tab[0]->starting_time, i);
 			pthread_mutex_unlock(&philo_tab[0]->data->mutex_chat);
 			return (1);
 		}
+		pthread_mutex_unlock(&philo_tab[0]->data->mutex_eat);
 		i++;
 	}
 	return (0);
