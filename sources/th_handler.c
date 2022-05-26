@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   th_handler.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/21 01:57:48 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/23 23:28:12 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/26 17:22:51 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@ static	void	*routine(void *param)
 	philo->last_eat_time = get_time();
 	pthread_mutex_unlock(&philo->data->mutex_eat);
 	if (philo->phi_id % 2 == 1)
-		ft_usleep(30);
+		ft_usleep(philo->data->t_eat, philo);
 	while (1)
 	{
-		usleep(1);
 		if (!take_fork(philo, TAKE_F1) || !take_fork(philo, TAKE_F2))
 			break ;
 		if (!eating(philo))
@@ -55,7 +54,7 @@ int	launch_threads(t_philo **philo_tab)
 			return (0);
 		i++;
 	}
-	ft_usleep(10);
+	ft_usleep(10, philo_tab[0]);
 	monitoring(philo_tab);
 	i = 0;
 	while (i < philo_tab[0]->data->nb_forks)
@@ -67,4 +66,3 @@ int	launch_threads(t_philo **philo_tab)
 	free(th);
 	return (1);
 }
-

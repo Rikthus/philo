@@ -17,6 +17,7 @@ LST_SRCS	:=	main.c \
 				th_handler.c \
 				events.c \
 				fork_events.c \
+				printer.c \
 				cleaner.c \
 				utils.c
 

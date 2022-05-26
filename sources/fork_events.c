@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fork_events.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 14:53:52 by maxperei          #+#    #+#             */
-/*   Updated: 2022/05/23 22:48:41 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/26 17:24:30 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ void	check_drop_forks(t_philo *philo)
 
 int	take_fork(t_philo *philo, int fork)
 {
+	if (philo->data->nb_forks == 1 && fork == TAKE_F2)
+	{
+		ft_usleep(philo->data->t_die, philo);
+		return (0);
+	}
 	if (fork == TAKE_F1)
 	{
 		pthread_mutex_lock(&philo->data->mtx[philo->phi_id]);

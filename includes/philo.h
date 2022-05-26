@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 19:45:45 by maxperei          #+#    #+#             */
-/*   Updated: 2022/05/23 23:14:39 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/26 17:17:01 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_data
 	pthread_mutex_t		mutex_end_diner;
 }	t_data;
 
-typedef struct	s_philo
+typedef struct s_philo
 {
 	int					phi_id;
 	int					nb_eat;
@@ -55,8 +55,6 @@ typedef struct	s_philo
 # define TAKE_F2 6
 # define DROP_F1 7
 # define DROP_F2 8
-
-# define DEBUG printf("ok\n");
 
 // PARSING
 int					parsing(int argc, char **argv);
@@ -77,12 +75,14 @@ void				monitoring(t_philo **philo_tab);
 int					eating(t_philo *philo);
 int					thinking(t_philo *philo);
 int					sleeping(t_philo *philo);
-int					print_state(t_philo *philo, int state);
 
 // EVENT_FORK
 void				check_drop_forks(t_philo *philo);
 int					take_fork(t_philo *philo, int fork);
 void				release_fork(t_philo *philo, int fork);
+
+// PRINTER
+int					print_state(t_philo *philo, int state);
 
 // CLEANER
 void				clean_data(t_data **data);
@@ -91,7 +91,7 @@ void				clean_philos(t_philo **philo_tab);
 // UTILS
 int					ft_atoi(char *str);
 int					ft_strcmp(char *s1, char *s2);
-void				ft_usleep(int time);
+void				ft_usleep(int time, t_philo *philo);
 long long unsigned	get_time(void);
 
 #endif

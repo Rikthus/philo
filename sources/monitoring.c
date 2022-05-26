@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   monitoring.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tulipe <tulipe@student.42lyon.fr>          +#+  +:+       +#+        */
+/*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 12:06:13 by tulipe            #+#    #+#             */
-/*   Updated: 2022/05/23 23:25:24 by tulipe           ###   ########lyon.fr   */
+/*   Updated: 2022/05/26 17:12:00 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ static	int	is_dead(t_philo **philo_tab, int nb_philo, int t_die)
 			philo_tab[0]->data->death = 1;
 			pthread_mutex_unlock(&philo_tab[0]->data->mutex_death);
 			pthread_mutex_lock(&philo_tab[0]->data->mutex_chat);
-			printf("[%llu] %d died\n", get_time() - philo_tab[0]->starting_time, i + 1);
+			printf("[%llu] %d died\n",
+				get_time() - philo_tab[0]->starting_time, i + 1);
 			pthread_mutex_unlock(&philo_tab[0]->data->mutex_chat);
 			return (1);
 		}
@@ -52,7 +53,7 @@ void	monitoring(t_philo **philo_tab)
 		}
 		pthread_mutex_unlock(&philo_tab[0]->data->mutex_end_diner);
 		if (is_dead(philo_tab, philo_tab[0]->data->nb_forks,
-			philo_tab[0]->data->t_die))
+				philo_tab[0]->data->t_die))
 			break ;
 	}
 }

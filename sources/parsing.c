@@ -6,7 +6,7 @@
 /*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 19:54:18 by maxperei          #+#    #+#             */
-/*   Updated: 2022/05/20 19:54:41 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/26 17:13:56 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	parsing(int argc, char **argv)
 		}
 		else
 		{
-			if (ft_atoi(argv[i]) < 0 || (ft_atoi(argv[i]) == 0 && ft_strcmp(argv[i], "0") != 0))
+			if (ft_atoi(argv[i]) < 0
+				|| (ft_atoi(argv[i]) == 0 && ft_strcmp(argv[i], "0") != 0))
 				return (0);
 		}
 		i++;

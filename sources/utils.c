@@ -6,7 +6,7 @@
 /*   By: maxperei <maxperei@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 17:53:06 by maxperei          #+#    #+#             */
-/*   Updated: 2022/05/23 20:06:33 by maxperei         ###   ########lyon.fr   */
+/*   Updated: 2022/05/26 17:12:56 by maxperei         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_atoi(char *str)
 {
-	long	int	nb;
+	long int	nb;
 	int			i;
 
 	nb = 0;
@@ -41,18 +41,10 @@ int	ft_strcmp(char *s1, char *s2)
 	return (s1[i] - s2[i]);
 }
 
-void	ft_usleep(int time)
+void	ft_usleep(int time, t_philo *philo)
 {
-	long long	r_time;
-	long long	s_time;
-
-	r_time = time * 1000;
-	s_time = 0;
-	while (s_time < r_time)
-	{
-		usleep(1000);
-		s_time += 1000;
-	}
+	(void)philo;
+	usleep(time * 1000);
 }
 
 long long unsigned	get_time(void)
